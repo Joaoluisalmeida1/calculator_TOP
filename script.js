@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const operatorButtons = document.querySelectorAll(".buttonOperator");
     const equalOperator = document.querySelector(".equalButton");
     let operatorAction = "";
+    const clearButton = document.querySelector("#clear");
 
     function clickButton(event) {
         const buttonValue = event.target.textContent;
@@ -90,4 +91,17 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     equalOperator.addEventListener("click", clickEqualButton);
+
+    function clickClearButton(event) {
+        const buttonValue = event.target.textContent;
+        console.log(buttonValue);
+        console.log("Clearing calculator's display and memory...");
+        arrayOfNumbers = [];
+        console.log(arrayOfNumbers)
+        displayValue = [];
+        console.log(displayValue);
+        display.textContent = displayValue;
+    }
+
+    clearButton.addEventListener("click", clickClearButton);
 });
