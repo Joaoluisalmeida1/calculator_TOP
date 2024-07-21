@@ -65,11 +65,30 @@ document.addEventListener("DOMContentLoaded", function() {
         const buttonValue = event.target.textContent;
         console.log(buttonValue);
         arrayOfNumbers.push(displayValue);
+        arrayOfNumbers.push(buttonValue);
         console.log(arrayOfNumbers);
         displayValue = "";
         display.textContent = "";
         operatorAction = buttonValue;
         console.log(operatorAction);
+        console.log(arrayOfNumbers.length);
+        if (arrayOfNumbers.length > 2) {
+            console.log("inside the if condition")
+            console.log(arrayOfNumbers);
+            console.log(arrayOfNumbers[arrayOfNumbers.length - 4]);
+            console.log(arrayOfNumbers[arrayOfNumbers.length - 2]);
+            console.log(arrayOfNumbers[arrayOfNumbers.length - 3]);
+            displayValue = operate(arrayOfNumbers[arrayOfNumbers.length - 4], arrayOfNumbers[arrayOfNumbers.length - 2], arrayOfNumbers[arrayOfNumbers.length - 3]);
+            console.log(displayValue);
+            // display.textContent = displayValue;
+            arrayOfNumbers = [];
+            console.log(arrayOfNumbers);
+            arrayOfNumbers.push(displayValue);
+            arrayOfNumbers.push(operatorAction);
+            console.log(arrayOfNumbers);
+            displayValue = "";
+            console.log(displayValue);
+        };
         return buttonValue
     }
 
@@ -83,11 +102,15 @@ document.addEventListener("DOMContentLoaded", function() {
         arrayOfNumbers.push(displayValue);
         console.log(arrayOfNumbers);
         console.log(arrayOfNumbers[arrayOfNumbers.length - 1]);
-        console.log(arrayOfNumbers[arrayOfNumbers.length - 2]);
+        console.log(arrayOfNumbers[arrayOfNumbers.length - 3]);
         console.log(operatorAction);
-        displayValue = operate(arrayOfNumbers[arrayOfNumbers.length - 2], arrayOfNumbers[arrayOfNumbers.length - 1], operatorAction);
+        displayValue = operate(arrayOfNumbers[arrayOfNumbers.length - 3], arrayOfNumbers[arrayOfNumbers.length - 1], arrayOfNumbers[arrayOfNumbers.length - 2]);
         display.textContent = displayValue;
         console.log(displayValue);
+        console.log(arrayOfNumbers);
+        arrayOfNumbers = [];
+        console.log(arrayOfNumbers);
+
     }
 
     equalOperator.addEventListener("click", clickEqualButton);
