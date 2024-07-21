@@ -59,12 +59,29 @@ button {
     border-radius: 8px;
     width: auto;
     cursor: pointer;
-    background-color: cadetblue;
     color: white;
     font-weight: bolder;
     font-size: large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
+}
+
+.buttonDisplay {
+    background-color: rgb(110, 210, 213);
+    color: white;
+}
+
+.buttonOperator {
+    background-color: rgb(80, 135, 74);
+    color: white;
+}
+
+#clear {
+    background-color: orange;
+}
+
+.equalButton {
+    background-color: rgb(80, 135, 74);
 }
 
 .row {
