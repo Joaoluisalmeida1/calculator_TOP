@@ -50,14 +50,24 @@ document.addEventListener("DOMContentLoaded", function() {
     const equalOperator = document.querySelector(".equalButton");
     let operatorAction = "";
     const clearButton = document.querySelector("#clear");
+    const dotButton = document.querySelectorAll(".dot");
 
     function clickButton(event) {
         const buttonValue = event.target.textContent;
+        if (buttonValue === ".") {
+            if (displayValue.includes(".")) {
+                return;
+            }
+        }
         displayValue += buttonValue;
         display.textContent = displayValue;
         console.log(buttonValue);
         console.log(displayValue);
         console.log(arrayOfNumbers);
+
+        if (displayValue.includes(".")) {
+            dotButton.disabled = true;
+        }
 
     }
 
