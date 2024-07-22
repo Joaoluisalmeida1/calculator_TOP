@@ -25,17 +25,21 @@ document.addEventListener("DOMContentLoaded", function() {
     let operator = 0;
     let arrayOfNumbers = [];
 
+    function roundNumber(num, dec) {
+        return Math.round(num * Math.pow(10, dec)) / Math.pow(10, dec);
+    }
+
     function operate(a , b, operation) {
         a = parseFloat(a);
         b = parseFloat(b);
         if (operation === "+") {
-            return sum(a,b);
+            return roundNumber(sum(a,b), 8);
         } else if (operation === "-") {
-            return subtract(a,b);
+            return roundNumber(subtract(a,b), 8);
         } else if (operation === "/") {
-            return divide(a,b);
+            return roundNumber(divide(a,b), 8);
         } else {
-            return multiply(a,b);
+            return roundNumber(multiply(a,b), 8);
         }
     };
 
